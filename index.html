@@ -57,7 +57,12 @@
    
      <main class="w-[80%] mx-auto">
          <!-- filter buttons -->
-          <p class="text-2xl font-bold text-[#002C5C] mb-3">Available Jobs</p>
+          <div class="flex flex-row justify-between">
+            <p class="text-2xl font-bold text-[#002C5C] mb-3">Available Jobs</p>
+            <p class="text-[#64748B]"> <span>0</span> jobs</p>
+
+          </div>
+          
         <div class="mb-6">
             <button class="btn btn-primary p-5 px-8 text-white">All</button>
      <button class="btn p-5 text-[#64748B] bg-base-100">Interview</button>
@@ -67,7 +72,7 @@
 
 
         <!-- cards section -->
-        <section>
+        <section id="allCards">
             <div class="card-conatiner grid grid-cols-1 gap-4">
                 <!-- card-1 -->
              <div class="card border border-base-200 shadow bg-base-100 p-4 flex justify-between flex-row">
