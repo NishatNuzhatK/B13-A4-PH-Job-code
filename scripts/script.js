@@ -43,3 +43,39 @@ function renderInterview(){
     }
 }
 
+
+
+function renderReject(){
+    filterSection.innerHTML = '';
+
+    for(rej of rejectedList){
+
+        let div = document.createElement('div');
+        div.className = 'card border border-base-200 shadow bg-base-100 p-4 flex justify-between flex-row';
+
+        div.innerHTML =`<div class="left space-y-6">
+                    <p class="companyName text-2xl font-bold text-[#002C5C] mb-1">${rej.companyName}</p>
+                    <p class="position text-[#64748B] mb-1">${rej.position}</p>
+                    <p class="location text-[#64748B] mb-2">${rej.location}</p>
+                    <p class="state border border-base-200 rounded w-[120px] py-2 text-center bg-base-200 text-[#002C5C] mb-2">${rej.state}</p>
+                    <p class="description text-[#002C5C]">${rej.description}</p>
+
+                    <div>
+                        <button class="interview-btn btn border-green-500 text-green-600">Interview</button>
+                        <button class="rejected-btn btn border-red-500 text-red-600">Rejected</button>
+                    </div>
+
+                </div>
+
+                <div class="right">
+                    <button class="delete-btn btn"><i class="fa-solid fa-trash-can"></i></button>
+
+                </div>
+        
+        `;
+
+        filterSection.appendChild(div);
+
+    }
+}
+
