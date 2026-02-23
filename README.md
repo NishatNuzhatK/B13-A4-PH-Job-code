@@ -20,9 +20,11 @@ cards.append(div);
 Ans:
 Event bubbling is a mechanism in javascript where when a event is triggered on a target element it goes upward to it’s parent elements. When an event is clicked on the child element  first it’s event handler is executed and then the event goes upward to it’s parent element and this goes on until it reaches the root element. 
 For example,
-`<div id = "parent">`
-    `<button id ="child">Log in</button>`
-  `</div>`
+```html
+<div id = "parent">
+    <button id ="child">Log in</button>
+  </div>
+`
 Here when the button is clicked event is triggered and then it bubbles up to it’s parent element and it continues to going upward until it reaches the root element. 
 
 ## 4. What is Event Delegation in JavaScript? Why is it useful?
