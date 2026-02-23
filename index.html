@@ -56,6 +56,7 @@
 
    
      <main class="w-[80%] mx-auto">
+
          <!-- filter buttons -->
           <div class="flex flex-row justify-between">
             <p class="text-2xl font-bold text-[#002C5C] mb-3">Available Jobs</p>
@@ -64,16 +65,16 @@
           </div>
           
         <div class="mb-6">
-            <button class="btn btn-primary p-5 px-8 text-white">All</button>
-     <button class="btn p-5 text-[#64748B] bg-base-100">Interview</button>
-     <button class="btn p-5 text-[#64748B] bg-base-100">Rejected</button>
+            <button class="btn btn-primary p-5 px-8 text-white" id="all-filter-btn">All</button>
+     <button class="btn p-5 text-[#64748B] bg-base-100" id="interview-filter-btn">Interview</button>
+     <button class="btn p-5 text-[#64748B] bg-base-100" id="rejected-filter-btn">Rejected</button>
 
         </div>
 
 
         <!-- cards section -->
         <section id="allCards">
-            <div class="card-conatiner grid grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 gap-4" id="card-conatiner">
                 <!-- card-1 -->
              <div class="card border border-base-200 shadow bg-base-100 p-4 flex justify-between flex-row">
                 <div class="left space-y-6">

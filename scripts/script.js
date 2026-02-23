@@ -6,9 +6,28 @@ let rejectedList = [];
 
 const filterSection = document.getElementById('fiter-section');
 
+let total = document.getElementById('total');
+let interviewCount = document.getElementById('interview');
+let rejectedCount = document.getElementById('rejected');
+
+const allCardContainer = document.getElementById('card-conatiner');
+// console.log(allCardContainer.children.length);
 
 
-// this functions shows the cards on each filter
+// this function shows the count of each filter
+function countFilter(){
+    total.innerText = allCardContainer.children.length;
+    interviewCount.innerText = interviewList.length;
+    rejectedCount.innerText = rejectedList.length;
+
+}
+
+countFilter();
+
+
+
+
+// this functions shows the cards interview filter
 function renderInterview(){
     filterSection.innerHTML = '';
 
@@ -44,7 +63,7 @@ function renderInterview(){
 }
 
 
-
+// this functions shows the cards rejected filter
 function renderReject(){
     filterSection.innerHTML = '';
 
@@ -77,5 +96,12 @@ function renderReject(){
         filterSection.appendChild(div);
 
     }
+}
+
+
+
+// toggling function
+function filterToggle(){
+    
 }
 
