@@ -1,5 +1,5 @@
-#Answers to Questions
-##1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+# Answers to Questions
+## 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
 Ans:
 
@@ -16,7 +16,7 @@ const div = document.createElement(‘div’);
 Then we have to append this new element to another parent element in order to insert it into the DOM. For this we have to use the append() method. For example-
 cards.append(div);
 
-##3. What is Event Bubbling? And how does it work?
+## 3. What is Event Bubbling? And how does it work?
 Ans:
 Event bubbling is a mechanism in javascript where when a event is triggered on a target element it goes upward to it’s parent elements. When an event is clicked on the child element  first it’s event handler is executed and then the event goes upward to it’s parent element and this goes on until it reaches the root element. 
 For example,
