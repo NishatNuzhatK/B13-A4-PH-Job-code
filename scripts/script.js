@@ -187,6 +187,14 @@ mainContainer.addEventListener('click', function(event){
             interviewList.push(cardInfo);
         }
 
+        // to remove the same card from rejected filter
+
+        rejectedList = rejectedList.filter(item => item.companyName != cardInfo.companyName);
+
+        if(currentStatus == 'rejected-filter-btn'){
+            renderReject();
+        }
+
         countFilter();
 
     }
@@ -218,6 +226,15 @@ mainContainer.addEventListener('click', function(event){
         if(!cardExist){
             rejectedList.push(cardInfo);
         }
+
+        // to remove the same card from interview filter
+        interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName);
+
+        if(currentStatus == 'interview-filter-btn'){
+            renderInterview();
+        }
+
+        
 
         countFilter();
 
