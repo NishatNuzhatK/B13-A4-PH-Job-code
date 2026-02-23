@@ -211,6 +211,7 @@ mainContainer.addEventListener('click', function(event){
 
         parenNode.querySelector('.state').innerText = 'Interview';
 
+
         const cardInfo ={
             companyName,
             position,
@@ -218,6 +219,8 @@ mainContainer.addEventListener('click', function(event){
             state : 'Interview',
             description
         };
+
+        parenNode.querySelector('.state').classList.add('border','border-green-500', 'text-green-600', 'font-bold');
 
         const cardExist = interviewList.find(item => item.companyName == cardInfo.companyName);
 
@@ -260,6 +263,8 @@ mainContainer.addEventListener('click', function(event){
             state : 'Rejected',
             description
         };
+
+        parenNode.querySelector('.state').classList.add('border','border-red-500', 'text-red-600', 'font-bold');
 
         const cardExist = rejectedList.find(item => item.companyName == cardInfo.companyName);
 
