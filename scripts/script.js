@@ -2,6 +2,7 @@ console.log('script connected!');
 
 let interviewList = [];
 let rejectedList = [];
+let currentStatus = 'all';
 
 
 const filterSection = document.getElementById('fiter-section');
@@ -15,6 +16,7 @@ const interviewFilterbtn =document.getElementById('interview-filter-btn');
 const rejectedFilterbtn = document.getElementById('rejected-filter-btn');
 
 const allCardContainer = document.getElementById('card-conatiner');
+const allCardSection = document.getElementById('allCards');
 // console.log(allCardContainer.children.length);
 
 const mainContainer = document.querySelector('main');
@@ -123,6 +125,31 @@ function filterToggle(id){
     selected.classList.remove('bg-base-100', 'text-[#64748B]');
     selected.classList.add('btn-primary', 'text-white');
 
+    currentStatus = id;
+
+
+
+    // for showing the cards
+
+    if(currentStatus == 'interview-filter-btn'){
+        allCardSection.classList.add('hidden');
+        filterSection.classList.remove('hidden');
+        renderInterview()
+    }
+
+    else if(currentStatus == 'rejected-filter-btn'){
+        allCardSection.classList.add('hidden');
+        filterSection.classList.remove('hidden');
+        renderReject()
+
+    }
+
+    else if(currentStatus == 'all-filter-btn'){
+        allCardSection.classList.remove('hidden');
+        filterSection.classList.add('hidden');
+
+    }
+
 
     
 }
@@ -138,11 +165,11 @@ mainContainer.addEventListener('click', function(event){
         console.log('interview button clicked');
 
         // adding cardinfo to the interviewlist 
-        const companyName = document.querySelector('.companyName').innerText;
-        const position = document.querySelector('.position').innerText;
-        const location = document.querySelector('.location').innerText;
-        const state = document.querySelector('.state').innerText;
-        const description = document.querySelector('.description').innerText;
+        const companyName = parenNode.querySelector('.companyName').innerText;
+        const position = parenNode.querySelector('.position').innerText;
+        const location = parenNode.querySelector('.location').innerText;
+        const state = parenNode.querySelector('.state').innerText;
+        const description = parenNode.querySelector('.description').innerText;
 
         parenNode.querySelector('.state').innerText = 'Interview';
 
@@ -170,11 +197,11 @@ mainContainer.addEventListener('click', function(event){
         console.log('rejected button clicked');
 
         // adding cardinfo to the interviewlist 
-        const companyName = document.querySelector('.companyName').innerText;
-        const position = document.querySelector('.position').innerText;
-        const location = document.querySelector('.location').innerText;
-        const state = document.querySelector('.state').innerText;
-        const description = document.querySelector('.description').innerText;
+        const companyName = parenNode.querySelector('.companyName').innerText;
+        const position = parenNode.querySelector('.position').innerText;
+        const location = parenNode.querySelector('.location').innerText;
+        const state = parenNode.querySelector('.state').innerText;
+        const description = parenNode.querySelector('.description').innerText;
 
         parenNode.querySelector('.state').innerText = 'Rejected';
 
