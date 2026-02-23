@@ -209,6 +209,7 @@ mainContainer.addEventListener('click', function(event){
 
     if(event.target.classList.contains('interview-btn')){
         
+        
         const parenNode = event.target.parentNode.parentNode;
         console.log('interview button clicked');
 
@@ -246,8 +247,25 @@ mainContainer.addEventListener('click', function(event){
             renderReject();
         }
 
-        jobCount.innerText = `${rejectedList.length} out of ${allCardContainer.children.length}
-        ` ; 
+
+        if(currentStatus == 'all-filter-btn'){
+         
+            jobCount.innerText = allCardContainer.children.length;
+          }
+         else if(currentStatus == 'interview-filter-btn'){
+         jobCount.innerText = `${interviewList.length} out of ${allCardContainer.children.length}
+        `;
+        }
+      
+        else if(currentStatus == 'rejected-filter-btn'){
+    
+            jobCount.innerText = `${rejectedList.length} out of ${allCardContainer.children.length}
+          `;
+         }
+        
+
+        // jobCount.innerText = `${rejectedList.length} out of ${allCardContainer.children.length}
+        // ` ; 
 
 
 
@@ -292,8 +310,25 @@ mainContainer.addEventListener('click', function(event){
             renderInterview();
         }
 
-        jobCount.innerText = `${interviewList.length} out of ${allCardContainer.children.length}
-        `; 
+         if(currentStatus == 'all-filter-btn'){
+
+         jobCount.innerText = allCardContainer.children.length;
+         
+        }
+       
+         else if(currentStatus == 'interview-filter-btn'){
+
+         jobCount.innerText = `${interviewList.length} out of ${allCardContainer.children.length}`;
+          
+        }
+         
+        else if(currentStatus == 'rejected-filter-btn'){
+        
+            jobCount.innerText = `${rejectedList.length} out of ${allCardContainer.children.length}`;
+        }
+
+        // jobCount.innerText = `${interviewList.length} out of ${allCardContainer.children.length}
+        // `; 
         
 
         countFilter();
