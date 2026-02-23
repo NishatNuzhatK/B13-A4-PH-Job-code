@@ -17,6 +17,8 @@ const rejectedFilterbtn = document.getElementById('rejected-filter-btn');
 const allCardContainer = document.getElementById('card-conatiner');
 // console.log(allCardContainer.children.length);
 
+const mainContainer = document.querySelector('main');
+
 
 // this function shows the count of each filter
 function countFilter(){
@@ -125,3 +127,75 @@ function filterToggle(id){
     
 }
 
+
+// for card buttons
+
+mainContainer.addEventListener('click', function(event){
+
+
+    if(event.target.classList.contains('interview-btn')){
+        const parenNode = event.target.parentNode.parentNode;
+        console.log('interview button clicked');
+
+        // adding cardinfo to the interviewlist 
+        const companyName = document.querySelector('.companyName').innerText;
+        const position = document.querySelector('.position').innerText;
+        const location = document.querySelector('.location').innerText;
+        const state = document.querySelector('.state').innerText;
+        const description = document.querySelector('.description').innerText;
+
+        parenNode.querySelector('.state').innerText = 'Interview';
+
+        const cardInfo ={
+            companyName,
+            position,
+            location,
+            state : 'Interview',
+            description
+        };
+
+        const cardExist = interviewList.find(item => item.companyName == cardInfo.companyName);
+
+        if(!cardExist){
+            interviewList.push(cardInfo);
+        }
+
+        countFilter();
+
+    }
+
+    else if(event.target.classList.contains('rejected-btn')){
+
+    const parenNode = event.target.parentNode.parentNode;
+        console.log('rejected button clicked');
+
+        // adding cardinfo to the interviewlist 
+        const companyName = document.querySelector('.companyName').innerText;
+        const position = document.querySelector('.position').innerText;
+        const location = document.querySelector('.location').innerText;
+        const state = document.querySelector('.state').innerText;
+        const description = document.querySelector('.description').innerText;
+
+        parenNode.querySelector('.state').innerText = 'Rejected';
+
+        const cardInfo ={
+            companyName,
+            position,
+            location,
+            state : 'Rejected',
+            description
+        };
+
+        const cardExist = rejectedList.find(item => item.companyName == cardInfo.companyName);
+
+        if(!cardExist){
+            rejectedList.push(cardInfo);
+        }
+
+        countFilter();
+
+    }
+    
+
+
+});
