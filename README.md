@@ -12,7 +12,7 @@ querySelector selects the first element with a specific css selector and and que
 
 Ans:
 To create a new element we have to use the createElement() method. For example-
-**const div = document.createElement(‘div’);**
+`const div = document.createElement('div');`
 Then we have to append this new element to another parent element in order to insert it into the DOM. For this we have to use the append() method. For example-
 cards.append(div);
 
@@ -20,9 +20,9 @@ cards.append(div);
 Ans:
 Event bubbling is a mechanism in javascript where when a event is triggered on a target element it goes upward to it’s parent elements. When an event is clicked on the child element  first it’s event handler is executed and then the event goes upward to it’s parent element and this goes on until it reaches the root element. 
 For example,
-**<div id = "parent">**
-    **<button id ="child">Log in</button>**
-  **</div>**
+`<div id = "parent">`
+    `<button id ="child">Log in</button>`
+  `</div>`
 Here when the button is clicked event is triggered and then it bubbles up to it’s parent element and it continues to going upward until it reaches the root element. 
 
 ## 4. What is Event Delegation in JavaScript? Why is it useful?
