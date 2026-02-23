@@ -147,6 +147,7 @@ function filterToggle(id){
             allCardSection.classList.add('hidden');
             noJobs.classList.remove('hidden');
              renderInterview();
+             jobCount.innerText = interviewList.length;
 
         }
         else{
@@ -170,6 +171,7 @@ function filterToggle(id){
             allCardSection.classList.add('hidden');
             noJobs.classList.remove('hidden');
             renderReject();
+            jobCount.innerText = rejectedList.length;
 
         }
         else{
@@ -244,6 +246,9 @@ mainContainer.addEventListener('click', function(event){
             renderReject();
         }
 
+        jobCount.innerText = `${rejectedList.length} out of ${allCardContainer.children.length}
+        ` ; 
+
 
 
         countFilter();
@@ -287,6 +292,8 @@ mainContainer.addEventListener('click', function(event){
             renderInterview();
         }
 
+        jobCount.innerText = `${interviewList.length} out of ${allCardContainer.children.length}
+        `; 
         
 
         countFilter();
