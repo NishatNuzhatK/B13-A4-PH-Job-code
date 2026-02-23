@@ -10,6 +10,10 @@ let total = document.getElementById('total');
 let interviewCount = document.getElementById('interview');
 let rejectedCount = document.getElementById('rejected');
 
+const allFilterbtn = document.getElementById('all-filter-btn');
+const interviewFilterbtn =document.getElementById('interview-filter-btn');
+const rejectedFilterbtn = document.getElementById('rejected-filter-btn');
+
 const allCardContainer = document.getElementById('card-conatiner');
 // console.log(allCardContainer.children.length);
 
@@ -101,7 +105,23 @@ function renderReject(){
 
 
 // toggling function
-function filterToggle(){
+function filterToggle(id){
+
+    // adding coloring to the selected filter
+    allFilterbtn.classList.add('bg-base-100', 'text-[#64748B]');
+    interviewFilterbtn.classList.add('bg-base-100', 'text-[#64748B]');
+    rejectedFilterbtn.classList.add('bg-base-100', 'text-[#64748B]');
+
+
+    allFilterbtn.classList.remove('btn-primary', 'text-white');
+    interviewFilterbtn.classList.remove('btn-primary', 'text-white');
+    rejectedFilterbtn.classList.remove('btn-primary', 'text-white');
+
+    let selected = document.getElementById(id);
+    selected.classList.remove('bg-base-100', 'text-[#64748B]');
+    selected.classList.add('btn-primary', 'text-white');
+
+
     
 }
 
